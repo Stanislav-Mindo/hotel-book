@@ -26,7 +26,7 @@ const BookIcon = () => (
 const Navbar = () => {
 	const navLinks = [
 		{ name: 'Home', path: '/' },
-		{ name: 'Hotels', path: '/rooms' },
+		{ name: 'Hotels', path: '/' },
 		{ name: 'My Bookings', path: '/' },
 		{ name: 'About', path: '/' },
 	]
@@ -39,13 +39,13 @@ const Navbar = () => {
 	const location = useLocation()
 
 	useEffect(() => {
-		if (location.pathname !== '/') {
+		if (location.pathname !== '/hotel-book') {
 			setIsScrolled(true)
 			return
 		} else {
 			setIsScrolled(false)
 		}
-		setIsScrolled(prev => (location.pathname !== '/' ? true : prev))
+		setIsScrolled(prev => (location.pathname !== '/hotel-book' ? true : prev))
 
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 10)
@@ -63,7 +63,7 @@ const Navbar = () => {
 			}`}
 		>
 			{/* Logo */}
-			<Link to='/'>
+			<Link to='/hotel-book'>
 				<img
 					src={assets.logo}
 					alt='logo'
@@ -81,7 +81,7 @@ const Navbar = () => {
 								? '/rooms'
 								: link.name === 'My Bookings'
 								? '/my-bookings'
-								: '/'
+								: '/hotel-book'
 						}`}
 					>
 						<div

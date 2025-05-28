@@ -19,7 +19,7 @@ const Router = () => {
 			{false && <HotelReg />}
 			<div className='min-h-[70vh]'>
 				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route path='/hotel-book' element={<Home />} />
 					<Route path='/rooms' element={<AllRooms />} />
 					<Route path='/rooms/:id' element={<RoomDetails />} />
 					<Route path='/my-bookings' element={<MyBookings />} />
